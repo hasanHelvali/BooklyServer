@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="Bookly.WebAPI/Bookly.WebAPI.csproj" />
+  </Folder>
+  <Folder Name="/src/Core/">
+    <Project Path="Bookly.Application/Bookly.Application.csproj" />
+    <Project Path="Bookly.Domain/Bookly.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/external/">
+    <Project Path="Bookly.Infrastructure/Bookly.Infrastructure.csproj" />
+    <Project Path="Bookly.Persistence/Bookly.Persistence.csproj" />
+    <Project Path="Bookly.Presentation/Bookly.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/Test/" />
+</Solution>

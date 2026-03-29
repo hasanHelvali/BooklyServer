@@ -1,0 +1,11 @@
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\bin\Debug\net10.0\Bookly.Infrastructure.deps.json
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\bin\Debug\net10.0\Bookly.Infrastructure.dll
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\bin\Debug\net10.0\Bookly.Infrastructure.pdb
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\obj\Debug\net10.0\Bookly.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\obj\Debug\net10.0\Bookly.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\obj\Debug\net10.0\Bookly.Infrastructure.AssemblyInfo.cs
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\obj\Debug\net10.0\Bookly.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\obj\Debug\net10.0\Bookly.Infrastructure.dll
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\obj\Debug\net10.0\refint\Bookly.Infrastructure.dll
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\obj\Debug\net10.0\Bookly.Infrastructure.pdb
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Infrastructure\obj\Debug\net10.0\ref\Bookly.Infrastructure.dll

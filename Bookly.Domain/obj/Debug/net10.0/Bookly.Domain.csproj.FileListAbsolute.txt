@@ -1,0 +1,12 @@
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\bin\Debug\net10.0\Bookly.Domain.deps.json
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\bin\Debug\net10.0\Bookly.Domain.dll
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\bin\Debug\net10.0\Bookly.Domain.pdb
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\obj\Debug\net10.0\Bookly.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\obj\Debug\net10.0\Bookly.Domain.AssemblyInfoInputs.cache
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\obj\Debug\net10.0\Bookly.Domain.AssemblyInfo.cs
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\obj\Debug\net10.0\Bookly.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\obj\Debug\net10.0\Bookly.Domain.dll
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\obj\Debug\net10.0\refint\Bookly.Domain.dll
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\obj\Debug\net10.0\Bookly.Domain.pdb
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\obj\Debug\net10.0\ref\Bookly.Domain.dll
+C:\Users\Hasan_Helvali\Desktop\Bookly\Bookly.Server\Bookly.Server\Bookly.Domain\obj\Debug\net10.0\Bookly.Domain.csproj.AssemblyReference.cache
