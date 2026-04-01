@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Bookly.WebAPI.Configurations;
 
-public class PersistanceServiceInstaller:IServiceInstaller
+public class PersistanceServiceInstaller : IServiceInstaller
 {
     private const string SectionName = "SqlServer";
     public void Install(IServiceCollection services, IConfiguration configuration)
@@ -13,9 +13,13 @@ public class PersistanceServiceInstaller:IServiceInstaller
 
         services.AddDbContext<ApplicationDbContext>(options =>
      options.UseSqlServer(connectionString));
-        services.AddIdentity<User, AppRole>()
-            .AddEntityFrameworkStores<ApplicationDbContext>();
-        
-        //services.AddAutoMapper(typeof(AssemblyReference).Assembly);
+        services.AddIdentity<User, AppRole>(options =>
+        {
+            options.Password.RequireNonAlphanumeric = false;
+            options.Password.RequireUppercase = false;
+            options.Password.RequireDigit = true;
+            options.Password.RequiredLength = 6;
+        })
+  .AddEntityFrameworkStores<ApplicationDbContext>();
     }
 }

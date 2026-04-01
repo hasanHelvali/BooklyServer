@@ -7,21 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Scalar.AspNetCore" Version="2.13.17" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Abstractions\" />
-    <Folder Include="Middlewares\" />
     <Folder Include="AOP\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bookly.Application\Bookly.Application.csproj" />
+    <ProjectReference Include="..\Bookly.Infrastructure\Bookly.Infrastructure.csproj" />
     <ProjectReference Include="..\Bookly.Persistence\Bookly.Persistence.csproj" />
+    <ProjectReference Include="..\Bookly.Presentation\Bookly.Presentation.csproj" />
   </ItemGroup>
 
 </Project>
