@@ -1,5 +1,9 @@
 ﻿using Bookly.Domain.Entities;
+using Bookly.Domain.Repositories;
+using Bookly.Domain.UnitOfWorks;
 using Bookly.Persistence.Context;
+using Bookly.Persistence.Repositories;
+using Bookly.Persistence.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bookly.WebAPI.Configurations;
@@ -21,5 +25,8 @@ public class PersistanceServiceInstaller : IServiceInstaller
             options.Password.RequiredLength = 6;
         })
   .AddEntityFrameworkStores<ApplicationDbContext>();
+
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
     }
 }
