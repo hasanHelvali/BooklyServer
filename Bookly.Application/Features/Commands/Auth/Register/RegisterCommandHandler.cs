@@ -19,6 +19,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommandRequest, Re
     public async  Task<RegisterCommandResponse> Handle(RegisterCommandRequest request, CancellationToken cancellationToken)
     {
         User user = _mapper.Map<User>(request);
+        user.NotHashPass = request.Password;
         IdentityResult result= await _userManager.CreateAsync(user,request.Password);
         if (!result.Succeeded)
             throw new BusinessException(string.Join(", ", result.Errors.Select(e=>e.Description)));

@@ -17,7 +17,7 @@ public sealed class JwtProvider : IJwtProvider
         _options = options.Value;
     }
 
-    public string GenerateToken(User user)
+    public string GenerateToken(User user, IList<string> roles)
     {
         var claims = new List<Claim>
       {
@@ -25,7 +25,8 @@ public sealed class JwtProvider : IJwtProvider
           new(JwtRegisteredClaimNames.Email, user.Email!),
           new(ClaimTypes.Name, $"{user.FirstName} {user.LastName}")
       };
-
+        foreach (var role in roles)
+            claims.Add(new Claim(ClaimTypes.Role, role));
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

@@ -19,7 +19,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommandRequest, LoginCom
     public async Task<LoginCommandResponse> Handle(LoginCommandRequest request, CancellationToken cancellationToken)
     {
         User? user = await _userManager.FindByEmailAsync(request.Email);
-
+        var roles = await _userManager.GetRolesAsync(user);
         if (user is null)
             throw new BusinessException("Email veya şifre hatalı.");
 
@@ -28,7 +28,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommandRequest, LoginCom
         if (!isPasswordValid)
             throw new BusinessException("Email veya şifre hatalı.");
 
-        string token = _jwtProvider.GenerateToken(user);
+        string token = _jwtProvider.GenerateToken(user,roles);
 
         return new LoginCommandResponse
         {

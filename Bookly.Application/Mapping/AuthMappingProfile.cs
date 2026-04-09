@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Bookly.Application.Features.Commands.Auth.Register;
+using Bookly.Application.Features.Commands.Product.UpdateProduct;
 using Bookly.Application.Features.Queries.Product.GetAll;
 using Bookly.Application.Features.Queries.Product.GetById;
 using Bookly.Domain.Entities;
@@ -22,5 +23,6 @@ public class AuthMappingProfile : Profile
 
         CreateMap<Product, GetAllProductsQueryResponse>().ReverseMap();
         CreateMap<Product, GetProductByIdQueryResponse>().ReverseMap();
+        CreateMap<UpdateProductCommandRequest, Product>().ReverseMap();
     }
 }

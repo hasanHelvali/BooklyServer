@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Security.Claims;
 using System.Text;
 namespace Bookly.WebAPI.OptionsSetup;
 
@@ -30,6 +31,7 @@ public class JwtBearerOptionsSetup : IPostConfigureOptions<JwtBearerOptions>
         options.TokenValidationParameters.ValidAudience = _jwtOptions.Audience;
         options.TokenValidationParameters.IssuerSigningKey = new SymmetricSecurityKey(
             Encoding.UTF8.GetBytes(_jwtOptions.SecretKey));
-
+        options.TokenValidationParameters.RoleClaimType = ClaimTypes.Role;
+        options.TokenValidationParameters.NameClaimType = ClaimTypes.Name;
     }
 }
