@@ -26,7 +26,7 @@ public sealed class JwtProvider : IJwtProvider
           new(ClaimTypes.Name, $"{user.FirstName} {user.LastName}")
       };
         foreach (var role in roles)
-            claims.Add(new Claim(ClaimTypes.Role, role));
+            claims.Add(new Claim(ClaimTypes.Role, role));//Attribute deki role ler buradan bulunur. 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
