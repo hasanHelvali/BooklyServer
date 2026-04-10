@@ -10,7 +10,7 @@ public class InfrastructureServiceInstaller : IServiceInstaller
     public void Install(IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.SectionName));
-
+          
         services.AddScoped<IJwtProvider, JwtProvider>();
 
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
