@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Features\Commands\Category\UpdateCategory\" />
     <Folder Include="Messaging\" />
     <Folder Include="Abstractions\" />
     <Folder Include="Services\" />

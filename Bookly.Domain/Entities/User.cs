@@ -11,5 +11,7 @@ public class User:IdentityUser<Guid>
     //public string PasswordHash { get; set; } = string.Empty;
     //public UserRole Role { get; set; } = UserRole.Customer;
     public bool IsActive { get; set; } = true;
-    public string NotHashPass { get; set; } 
+    public string NotHashPass { get; set; }
+    public string? RefreshToken { get; set; }
+    public DateTime? RefreshTokenExpiresAt { get; set; }
 }
