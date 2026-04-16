@@ -24,7 +24,7 @@ internal class CreateProductCommandHandler : IRequestHandler<CreateProductComman
             Author = request.Author,
             Price = request.Price,
             Stock = request.Stock,
-            Category = request.Category,
+            CategoryId = request.CategoryId,
             ImageUrl = request.ImageUrl,
             IsActive = true
         };

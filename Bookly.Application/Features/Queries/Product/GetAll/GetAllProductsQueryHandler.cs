@@ -17,7 +17,7 @@ public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQueryReq
 
     public async Task<List<GetAllProductsQueryResponse>> Handle(GetAllProductsQueryRequest request, CancellationToken cancellationToken)
     {
-        var products  = await _productRepository.GetAll(false).ToListAsync();
+        //var products  = await _productRepository.GetAll(false).ToListAsync();
         //return products.Select(p => new GetAllProductQueryResponse
         //{
         //    Id = p.ID,
@@ -29,6 +29,9 @@ public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQueryReq
         //    ImageUrl = p.ImageUrl,
         //    IsActive = p.IsActive
         //}).ToList();
+        var products = await _productRepository.GetAll(false)
+       .Include(p => p.Category)
+       .ToListAsync();
 
         return _mapper.Map<List<GetAllProductsQueryResponse>>(products);
 

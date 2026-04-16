@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Bookly.Domain.Repositories;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bookly.Application.Features.Queries.Product.GetById;
 internal class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQueryRequest, GetProductByIdQueryResponse>
@@ -15,7 +16,10 @@ internal class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQueryR
 
     public async Task<GetProductByIdQueryResponse> Handle(GetProductByIdQueryRequest request, CancellationToken cancellationToken)
     {
-       var product =  await _productRepository.GetById(request.Id.ToString(),false);
+        //var product =  await _productRepository.GetById(request.Id.ToString(),false);
+        var product = await _productRepository.GetAll(false)
+           .Include(p => p.Category)
+           .FirstOrDefaultAsync(p => p.ID == request.Id, cancellationToken);
         if (product is null)
             throw new Exception($"Product not found: {request.Id}");
         return _mapper.Map<GetProductByIdQueryResponse>(product);
