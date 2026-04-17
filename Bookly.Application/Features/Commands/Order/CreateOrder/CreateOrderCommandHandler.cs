@@ -64,7 +64,7 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommandReque
                 Quantity = item.Quantity,
                 UnitPrice = product.Price
             });
-
+            product.Stock -= item.Quantity;
             total += product.Price * item.Quantity;
         }
 

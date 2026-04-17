@@ -39,7 +39,8 @@ namespace Bookly.WebAPI
             }
 
             app.UseMiddleware<ExceptionMiddleware>();
-            app.UseCors();//UseHttpsRedirection dan once kullanýlmalýdýr. 
+            app.UseCors();
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
 
             app.UseAuthentication();

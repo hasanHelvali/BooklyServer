@@ -2,10 +2,12 @@
 using Bookly.Application.Features.Commands.Product.DeleteProductById;
 using Bookly.Application.Features.Commands.Product.UpdateProduct;
 using Bookly.Application.Features.Queries.Product.GetAll;
+using Bookly.Application.Features.Queries.Product.GetBestSelling;
 using Bookly.Application.Features.Queries.Product.GetById;
 using Bookly.Presentation.Abstractions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bookly.Presentation.Controllers;
@@ -69,6 +71,7 @@ public class ProductsController : ApiController
     }
 
     [HttpGet("[action]")]
+    [AllowAnonymous]
     public async Task<IActionResult> GetAllProducts()
     {
         GetAllProductsQueryRequest request = new GetAllProductsQueryRequest();
@@ -77,6 +80,7 @@ public class ProductsController : ApiController
     }
 
     [HttpGet("[action]/{id}")]
+    [AllowAnonymous]
     public async Task<IActionResult> GetProductById(Guid id,CancellationToken ct)
     {
         if (string.IsNullOrEmpty(id.ToString())) throw new Exception("Ürün Bulunamadı.");
@@ -102,5 +106,34 @@ public class ProductsController : ApiController
         return Ok(response);
     }
 
+
+    [HttpPost("[action]")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> UploadImage(IFormFile file, CancellationToken cancellationToken)
+    {
+        if (file == null || file.Length == 0)
+            return BadRequest("Dosya seçilmedi.");
+
+        var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "products");
+        Directory.CreateDirectory(uploadsPath);
+
+        var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+        var filePath = Path.Combine(uploadsPath, fileName);
+
+        using var stream = new FileStream(filePath, FileMode.Create);
+        await file.CopyToAsync(stream, cancellationToken);
+
+        var url = $"http://localhost:5014/images/products/{fileName}";
+        return Ok(new { url });
+    }
+
+    [HttpGet("[action]")]
+    [AllowAnonymous]
+    public async Task<IActionResult> GetBestSellingProducts([FromQuery] int count = 1, CancellationToken cancellationToken =
+ default)
+    {
+        var response = await _mediator.Send(new GetBestSellingProductsQueryRequest { Count = count }, cancellationToken);
+        return Ok(response);
+    }
 
 }
